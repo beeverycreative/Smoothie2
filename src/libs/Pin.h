@@ -81,6 +81,10 @@ class Pin {
             bool inverting:1;
             bool valid:1;
         };
+
+        //Added pinName and getter to access to mbed pinName
+        PinName pinName;
+        PinName getPinName() {return pinName; }
 };
 
 

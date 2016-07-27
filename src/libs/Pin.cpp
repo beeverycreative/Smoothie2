@@ -29,9 +29,11 @@ Pin* Pin::from_string(std::string value){
     valid= true;
 
     // grab first integer as port. pointer to first non-digit goes in cn
-    port_number = strtol(cs, &cn, 10);
+    //port_number = strtol(cs, &cn, 10);
+    port_number = strtol(cs, &cn, 16); //allow hexadecimal portnumbes
     // if cn > cs then strtol read at least one digit
-    if ((cn > cs) && (port_number <= 7)){
+    //if ((cn > cs) && (port_number <= 7)){
+    if ((cn > cs) && (port_number <= 15)){
         // if the char after the first integer is a . then we should expect a pin index next
         if (*cn == '.'){
             // move pointer to first digit (hopefully) of pin index
@@ -45,6 +47,7 @@ Pin* Pin::from_string(std::string value){
             // Find the pin
             if( pins.count((port_number<<8)+pin) > 0 ){
                 this->mbed_pin = new DigitalInOut( pins[(port_number<<8)+pin] );
+                this->pinName = pins[(port_number<<8)+pin];
             }
 
             // if strtol read some numbers, cn will point to the first non-digit

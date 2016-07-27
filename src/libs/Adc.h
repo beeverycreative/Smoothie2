@@ -12,7 +12,7 @@
 
 #include "PinNames.h" // mbed.h lib
 #include "mbed.h"
-// TOADDBACK #include "libs/ADC/adc.h"
+//#include "libs/ADC/adc.h"
 
 class Pin;
 
@@ -25,6 +25,8 @@ class Adc {
 
         AnalogIn* analogin;
         // TOADDBACK ADC* adc;
+
+        int get_max_value() const { return 65536;}    //Assuming no overscan and 12bit conversion
 };
 
 

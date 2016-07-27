@@ -7,6 +7,12 @@
 *.o
 *.d
 *.a
+*.cproject
+*.project
+.settings/
+debuglog
+*.launch
+src/core
 
 # Editor temporary files
 *~
