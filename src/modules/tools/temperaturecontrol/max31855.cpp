@@ -32,7 +32,7 @@ Max31855::~Max31855()
 // Get configuration from the config file
 void Max31855::UpdateConfig(uint16_t module_checksum, uint16_t name_checksum)
 {
-    /* TOADDBACK
+
     // Chip select
     this->spi_cs_pin.from_string(THEKERNEL->config->value(module_checksum, name_checksum, chip_select_checksum)->by_default("0.16")->as_string());
     this->spi_cs_pin.set(true);
@@ -45,10 +45,10 @@ void Max31855::UpdateConfig(uint16_t module_checksum, uint16_t name_checksum)
     PinName sclk;
     if(spi_channel == 0) {
         // Channel 0
-        mosi=P0_18; miso=P0_17; sclk=P0_15;
+        mosi=P1_2; miso=P1_1; sclk=P3_0;
     } else {
         // Channel 1
-        mosi=P0_9; miso=P0_8; sclk=P0_7;
+        mosi=P1_4; miso=P1_3; sclk=PF_4;
     } 
 
     delete spi;
@@ -56,7 +56,7 @@ void Max31855::UpdateConfig(uint16_t module_checksum, uint16_t name_checksum)
 
     // Spi settings: 1MHz (default), 16 bits, mode 0 (default)
     spi->format(16);
-    */
+
 }
 
 float Max31855::get_temperature()

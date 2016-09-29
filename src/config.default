@@ -94,15 +94,19 @@ laser_module_enable                          false            # Whether to activ
 # First hotend configuration
 temperature_control.hotend.enable            true             # Whether to activate this ( "hotend" ) module at all.
                                                               # All configuration is ignored if false.
-temperature_control.hotend.thermistor_pin    adc.5             # Pin for the thermistor to read
+#temperature_control.hotend.thermistor_pin    adc.5             # Pin for the thermistor to read
 temperature_control.hotend.heater_pin        7.5              # Pin that controls the heater, set to nc if a readonly thermistor is being defined
-temperature_control.hotend.thermistor        EPCOS100K        # see http://smoothieware.org/temperaturecontrol#toc5
+#temperature_control.hotend.thermistor        EPCOS100K        # see http://smoothieware.org/temperaturecontrol#toc5
 #temperature_control.hotend.beta             4066             # or set the beta value
 temperature_control.hotend.set_m_code        104              #
 temperature_control.hotend.set_and_wait_m_code 109            #
 temperature_control.hotend.designator        T                #
 #temperature_control.hotend.max_temp         300              # Set maximum temperature - Will prevent heating above 300 by default
 #temperature_control.hotend.min_temp         0                # Set minimum temperature - Will prevent heating below if set
+
+temperature_control.hotend.sensor            max31855
+temperature_control.hotend.spi_channel       1
+temperature_control.hotend.chip_select_pin   1.0
 
 #temperature_control.hotend.p_factor         13.7             # permanently set the PID values after an auto pid
 #temperature_control.hotend.i_factor         0.097            #
@@ -114,8 +118,8 @@ temperature_control.hotend.designator        T                #
 temperature_control.hotend2.enable            false           # Whether to activate this ( "hotend" ) module at all.
                                                               # All configuration is ignored if false.
 
-temperature_control.hotend2.thermistor_pin    adc.7             # Pin for the thermistor to read
-temperature_control.hotend2.heater_pin        7.7              # Pin that controls the heater
+#temperature_control.hotend2.thermistor_pin    adc.7             # Pin for the thermistor to read
+#temperature_control.hotend2.heater_pin        7.7              # Pin that controls the heater
 temperature_control.hotend2.thermistor        EPCOS100K        # see http://smoothieware.org/temperaturecontrol#toc5
 #temperature_control.hotend2.beta             4066             # or set the beta value
 temperature_control.hotend2.set_m_code        104              #
