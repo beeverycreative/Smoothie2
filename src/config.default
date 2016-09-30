@@ -105,7 +105,7 @@ temperature_control.hotend.designator        T                #
 #temperature_control.hotend.min_temp         0                # Set minimum temperature - Will prevent heating below if set
 
 temperature_control.hotend.sensor            max31855
-temperature_control.hotend.spi_channel       1
+temperature_control.hotend.spi_channel       0
 temperature_control.hotend.chip_select_pin   1.0
 
 #temperature_control.hotend.p_factor         13.7             # permanently set the PID values after an auto pid
